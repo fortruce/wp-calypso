@@ -17,6 +17,7 @@ var analytics = require( 'analytics' ),
 	upgradesActions = require( 'lib/upgrades/actions' ),
 	titleActions = require( 'lib/screen-title/actions' ),
 	setSection = require( 'state/ui/actions' ).setSection,
+	plansList = require( 'lib/plans-list' )(),
 	productsList = require( 'lib/products-list' )();
 
 module.exports = {
@@ -178,6 +179,8 @@ module.exports = {
 				<CheckoutData>
 					<Checkout
 						cards={ storedCards }
+						plan={ context.params.plan }
+						plans={ plansList }
 						productsList={ productsList }
 						sites={ sites } />
 				</CheckoutData>
